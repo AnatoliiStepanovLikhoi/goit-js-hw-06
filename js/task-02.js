@@ -9,10 +9,10 @@ const ingredients = [
 
 const listElemRef = document.querySelector('#ingredients')
 
-console.log(listElemRef)
+// console.log(listElemRef)
 
 const addIngredients = ingredients.map(ingredient => {
-  console.log(ingredient)
+  // console.log(ingredient)
 
   const newIngredients = document.createElement('li');
 
@@ -25,4 +25,4 @@ const addIngredients = ingredients.map(ingredient => {
 
 listElemRef.append(...addIngredients)
 
-// console.log(listElemRef)
+console.log(listElemRef)

@@ -23,7 +23,7 @@ const categoriesRef = document.querySelector('#categories');
 
 // const categoriesItemsRef = categoriesRef.querySelectorAll('.item')
 
-console.log(categoriesItemsRef)
+// console.log(categoriesItemsRef)
 
 console.log(`Number of categories: ${categoriesRef.children.length}`);
 
@@ -36,11 +36,11 @@ const categoriesSumRef = categoriesRef => {
 
         for (const childInnerElem of childElem.children) {
             // console.log(childInnerElem)
-            if (childInnerElem.localName === 'h2') {
+            if (childInnerElem.tagName === 'H2') {
                 console.log(`Category:${childInnerElem.textContent}`)
             };
 
-            if (childInnerElem.localName === 'ul') {
+            if (childInnerElem.tagName === 'UL') {
                 console.log(`Elements:${childInnerElem.children.length}`)
             };
         };
