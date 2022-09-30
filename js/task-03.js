@@ -20,7 +20,7 @@ console.log(galleryListRef);
 const makegalleryMarkup = images.map(({url, alt}) => 
  `<li class = 'gallery__item'>
   <img class = 'gallery__img' src="${url}" 
-  alt="${alt}">
+  alt="${alt}" width="400">
   </li>`
 ).join(``)
 

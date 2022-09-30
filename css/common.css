@@ -23,10 +23,22 @@ button {
   cursor: pointer;
 }
 
-gallery__item{
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+
+  gap: 15px;
+  width: auto;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery__item{
 
 }
 
-gallery__img{
+.gallery__img{
   
 }
