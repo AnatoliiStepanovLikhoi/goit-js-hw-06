@@ -36,11 +36,11 @@ const categoriesSumRef = categoriesRef => {
 
         for (const childInnerElem of childElem.children) {
             // console.log(childInnerElem)
-            if (childInnerElem.tagName === 'H2') {
+            if (childInnerElem.nodeName === 'H2') {
                 console.log(`Category:${childInnerElem.textContent}`)
             };
 
-            if (childInnerElem.tagName === 'UL') {
+            if (childInnerElem.nodeName === 'UL') {
                 console.log(`Elements:${childInnerElem.children.length}`)
             };
         };
