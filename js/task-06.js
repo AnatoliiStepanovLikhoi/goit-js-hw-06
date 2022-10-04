@@ -1,5 +1,17 @@
+const inputRef = document.querySelector('#validation-input')
 
+function onValidationInputChange() {
+    const inputSymCount = inputRef.value.length;
+    const inputRequiredCount = inputRef.dataset.length;
 
+    console.log(inputRequiredCount)
+
+    inputRef.classList.value = ""
+
+    inputRef.classList.add(inputSymCount != inputRequiredCount ? 'invalid' : "valid")
+}
+
+inputRef.addEventListener('blur', onValidationInputChange)
 
 
 
