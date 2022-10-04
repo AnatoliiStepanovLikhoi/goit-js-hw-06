@@ -29,7 +29,7 @@ const refs = {
   numberInput: document.querySelector('#controls > input'),
   divBoxes: document.querySelector('#boxes'),
   createButton: document.querySelector('[data-create]'),
-  destroyButton: document.querySelector('[data-destroy]')
+  destroyButton: document.querySelector('[data-destroy]'),
 }
 
 
@@ -44,20 +44,19 @@ function createBoxes(amount) {
     
     const divDims = 30 + i * 10;
 
-    // console.log(divDims);
-    // divMarkup += `<div style ="width: ${divDims}px; height: ${divDims}px; background-color: ${getRandomHexColor()}"></div>`;
-    // console.log(divMarkup)
-    
     const elem = document.createElement('div');
     elem.style.width = `${divDims}px`;
     elem.style.height = `${divDims}px`;
     elem.style.backgroundColor = getRandomHexColor();
 
-    // console.log(elem)
-    // divArray += elem.toString();
-
     divMarkup.push(elem);
 
+    // console.log(divDims);
+    // divMarkup += `<div style ="width: ${divDims}px; height: ${divDims}px; background-color: ${getRandomHexColor()}"></div>`;
+    // console.log(divMarkup)
+
+    // console.log(elem)
+    // divArray += elem.toString();
   }
 return divMarkup
   // console.log(divMarkup)
@@ -69,29 +68,27 @@ function destroyBoxes(){
 }
 
 function onCreateBtnClick(){
-  const number = refs.numberInput.value
+  const number = refs.numberInput.value;
+
   if (!number) {
-    alert('Please fill number of boxes')
+    alert('Please fill number of boxes');
   }
-  // console.log(number)
   refs.divBoxes.append(...createBoxes(number))
 
   refs.numberInput.value = '';
 }
 
-// console.log(createBoxes(3))
-
-refs.createButton.addEventListener('click', onCreateBtnClick)
-
-refs.destroyButton.addEventListener('click', destroyBoxes)
-
 const onKeyDownCode= ({ code }) => {
   if (code === 'Enter') {
-  onCreateBtnClick()
-  }
+    onCreateBtnClick();
+  };
   if (code === 'Escape') {
-  destroyBoxes()
-  }
+    destroyBoxes();
+  };
 };
-  
-window.addEventListener('keydown', onKeyDownCode)
+
+refs.createButton.addEventListener('click', onCreateBtnClick);
+
+refs.destroyButton.addEventListener('click', destroyBoxes);
+
+window.addEventListener('keydown', onKeyDownCode);
