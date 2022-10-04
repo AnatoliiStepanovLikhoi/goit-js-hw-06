@@ -17,13 +17,30 @@ const galleryListRef = document.querySelector('.gallery')
 
 console.log(galleryListRef);
 
-const makegalleryMarkup = images.map(({url, alt}) => 
- `<li class = 'gallery__item'>
-  <img class = 'gallery__img' src="${url}" 
-  alt="${alt}" width="400">
-  </li>`
-).join(``)
+const makegalleryMarkup = images => {
+  return images.map(image => {
+    const imgItem = document.createElement("img");
+    const liItem = document.createElement("li");
+    imgItem.src = image.url;
+    imgItem.alt = image.alt;
+    imgItem.width = 350;
+    liItem.append(imgItem)
+    return liItem
+  })
+}
 
-console.log(makegalleryMarkup)
+// console.log(makegalleryMarkup)
 
-galleryListRef.insertAdjacentHTML('beforeend', makegalleryMarkup)
+const galleryElems = makegalleryMarkup(images)
+
+galleryListRef.append(...galleryElems)
+
+
+// const makegalleryMarkup = images.map(({url, alt}) => 
+//  `<li class = 'gallery__item'>
+//   <img class = 'gallery__img' src="${url}" 
+//   alt="${alt}" width="400">
+//   </li>`
+// ).join(``)
+
+// galleryListRef.insertAdjacentHTML('beforeend', makegalleryMarkup)
