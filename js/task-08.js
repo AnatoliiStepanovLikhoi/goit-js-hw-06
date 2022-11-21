@@ -5,7 +5,7 @@ function onLoginFormSubmit(event) {
 
     const formData = new FormData(event.currentTarget)
 
-    console.log(...formData)
+    console.log([...formData.values()])
 
     if ([...formData.values()].includes("")) {
         alert('Please fill all fields!')
@@ -14,9 +14,9 @@ function onLoginFormSubmit(event) {
 
     const formDataToObject = Object.fromEntries(formData)
     console.log(formDataToObject);
-    
+
     formRef.reset();
-    
+
 }
 
 formRef.addEventListener('submit', onLoginFormSubmit)

@@ -41,7 +41,7 @@ function createBoxes(amount) {
   let divMarkup = [];
 
   for (let i = 0; i < amount; i += 1) {
-    
+
     const divDims = 30 + i * 10;
 
     const elem = document.createElement('div');
@@ -58,16 +58,16 @@ function createBoxes(amount) {
     // console.log(elem)
     // divArray += elem.toString();
   }
-return divMarkup
+  return divMarkup
   // console.log(divMarkup)
   // refs.divBoxes.insertAdjacentHTML('beforeend', divMarkup);
 }
 
-function destroyBoxes(){
+function destroyBoxes() {
   refs.divBoxes.innerHTML = '';
 }
 
-function onCreateBtnClick(){
+function onCreateBtnClick() {
   const number = refs.numberInput.value;
 
   if (!number) {
@@ -78,7 +78,7 @@ function onCreateBtnClick(){
   refs.numberInput.value = '';
 }
 
-const onKeyDownCode= ({ code }) => {
+const onKeyDownCode = ({ code }) => {
   if (code === 'Enter') {
     onCreateBtnClick();
   };
@@ -88,7 +88,5 @@ const onKeyDownCode= ({ code }) => {
 };
 
 refs.createButton.addEventListener('click', onCreateBtnClick);
-
 refs.destroyButton.addEventListener('click', destroyBoxes);
-
 window.addEventListener('keydown', onKeyDownCode);

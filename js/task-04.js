@@ -17,29 +17,46 @@ const valueRef = document.querySelector('#value');
 
 console.log(decrementBtnRef);
 
-const counter = {
-    value: 0,
+// const counter = {
+//     value: 0,
 
-    increment() {
+//     increment() {
+//         this.value += 1
+//     },
+
+//     decrement() {
+//         this.value -=1
+//     }
+// }
+
+class Counter {
+    constructor(value = 0) {
+        this.value = value
+    }
+
+        increment() {
         this.value += 1
-    },
+    }
 
-    decrement() {
+        decrement() {
         this.value -=1
     }
+
 }
+
+const numberCounter = new Counter(0)
 
 decrementBtnRef.addEventListener('click', () => {
 
-    counter.decrement();
+    numberCounter.decrement();
 
-    valueRef.textContent = counter.value;
+    valueRef.textContent = numberCounter.value;
 })
 
 incrementBtnRef.addEventListener('click', () => {
-    counter.increment();
+    numberCounter.increment();
 
-    valueRef.textContent = counter.value;
+    valueRef.textContent = numberCounter.value;
 })
 
 

@@ -8,7 +8,7 @@ function onValidationInputChange() {
 
     inputRef.classList.value = ""
 
-    inputRef.classList.add(inputSymCount != inputRequiredCount ? 'invalid' : "valid")
+    inputRef.classList.add(inputSymCount !== inputRequiredCount ? 'invalid' : "valid")
 }
 
 inputRef.addEventListener('blur', onValidationInputChange)
